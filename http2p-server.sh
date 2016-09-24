@@ -8,4 +8,5 @@ if [ ! -f "$INSTALL_FLAG" ]; then
 fi
 
 cp /app/3proxy.cfg $CONF	
-sed -i "s/SERVER_PORT/${SERVER_PORT}/g" $CONF
+sed -i "s/USER_PWD/${USER_PWD}/g" $CONF
+/app/3proxy $CONF
