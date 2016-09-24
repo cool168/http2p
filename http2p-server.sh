@@ -1,7 +1,7 @@
 #!/bin/sh
 
 INSTALL_FLAG="/app/p2p-server.installed"
-CONF="/app/3proxy.cfg"
+CONF="/etc/3proxy.cfg"
 
 if [ ! -f "$INSTALL_FLAG" ]; then
 	touch $INSTALL_FLAG
