@@ -1,12 +1,13 @@
 #!/bin/sh
 
-INSTALL_FLAG="/app/p2p-server.installed"
+echo ${EN_3CFG='no'}
 CONF="/etc/3proxy.cfg"
 
-if [ ! -f "$INSTALL_FLAG" ]; then
-	touch $INSTALL_FLAG
+if  [ $EN_3CFG = "no" ]
+then
+	cp /app/3proxy.cfg $CONF	
+	sed -i "s/USER_PWD/${USER_PWD}/g" $CONF
 fi
+sleep 1
 
-cp /app/3proxy.cfg $CONF	
-sed -i "s/USER_PWD/${USER_PWD}/g" $CONF
 /app/3proxy $CONF
